@@ -1,5 +1,6 @@
 "use client"
 import { useSession, signIn, signOut } from "next-auth/react"
+import Image from "next/image"
 
 export default function Component() {
   const { data: session } = useSession()
@@ -9,7 +10,7 @@ export default function Component() {
       <div className="container flex justify-center my-20">
         <div className="w-full max-w-sm bg-gray-900  rounded-lg shadow  ">
           <div className="flex p-16 flex-col items-center ">
-            <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={session.user.image} alt="Bonnie image" />
+            <Image className="w-24 h-24 mb-3 rounded-full shadow-lg" width={200} height={100} src={session.user.image} alt="Bonnie image" />
             <h5 className="mb-1 text-xl font-medium text-white dark:text-white">{session.user.name}</h5>
             <span className="text-sm text-gray-500 dark:text-gray-400">{session.user.email}</span>
             <div className="flex mt-4 md:mt-6">
@@ -28,7 +29,7 @@ export default function Component() {
     <div className="container flex justify-center my-20">
       <div className="w-full max-w-sm bg-gray-900  rounded-lg shadow  ">
         <div className="flex p-16 flex-col items-center ">
-          <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="/assets/user.svg" alt="Bonnie image" />
+          <Image className="w-24 h-24 mb-3 rounded-full shadow-lg"  width={200} height={100} src="/assets/user.svg" alt="Bonnie image" />
           <h5 className="mb-1 text-xl font-medium text-white dark:text-white">User Name</h5>
           <span className="text-sm text-gray-500 dark:text-gray-400">User email id</span>
           <div className="flex mt-4 md:mt-6">
